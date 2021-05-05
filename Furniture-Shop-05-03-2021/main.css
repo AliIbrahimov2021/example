@@ -1,0 +1,1034 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f2f2f2;
+}
+
+nav {
+  background: #1b1b1b;
+}
+
+nav:after {
+  content: '';
+  clear: both;
+  display: table;
+}
+
+nav .logo {
+  float: left;
+  color: white;
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 70px;
+  padding-left: 60px;
+}
+
+nav ul {
+  float: right;
+  margin-right: 40px;
+  list-style: none;
+  position: relative;
+}
+
+nav ul li {
+  float: left;
+  display: inline-block;
+  background: #1b1b1b;
+  margin: 0 5px;
+}
+
+nav ul li a {
+  color: white;
+  line-height: 70px;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 15px;
+}
+
+nav ul li a:hover {
+  color: cyan;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 5px #33ffff, 0 0 10px #66ffff;
+          box-shadow: 0 0 5px #33ffff, 0 0 10px #66ffff;
+}
+
+nav ul ul li a:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+nav ul ul {
+  position: absolute;
+  top: 90px;
+  border-top: 3px solid cyan;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: top .3s;
+  transition: top .3s;
+}
+
+nav ul ul ul {
+  border-top: none;
+}
+
+nav ul li:hover > ul {
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
+}
+
+nav ul ul li {
+  position: relative;
+  margin: 0px;
+  width: 150px;
+  float: none;
+  display: list-item;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+nav ul ul li a {
+  line-height: 50px;
+}
+
+nav ul ul ul li {
+  position: relative;
+  top: -60px;
+  left: 150px;
+}
+
+.show, .icon, input {
+  display: none;
+}
+
+.fa-plus {
+  font-size: 15px;
+  margin-left: 40px;
+}
+
+@media all and (max-width: 968px) {
+  nav ul {
+    margin-right: 0px;
+    float: left;
+  }
+  nav .logo {
+    padding-left: 30px;
+    width: 100%;
+  }
+  .show + a, ul {
+    display: none;
+  }
+  nav ul li, nav ul ul li {
+    display: block;
+    width: 100%;
+  }
+  nav ul li a:hover {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .show {
+    display: block;
+    color: white;
+    font-size: 18px;
+    padding: 0 20px;
+    line-height: 70px;
+    cursor: pointer;
+  }
+  .show:hover {
+    color: cyan;
+  }
+  .icon {
+    display: block;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 40px;
+    line-height: 70px;
+    cursor: pointer;
+    font-size: 25px;
+  }
+  nav ul ul {
+    top: 70px;
+    border-top: 0px;
+    float: none;
+    position: static;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+  }
+  nav ul ul a {
+    padding-left: 40px;
+  }
+  nav ul ul ul a {
+    padding-left: 80px;
+  }
+  nav ul ul ul li {
+    position: static;
+  }
+  [id^=btn]:checked + ul {
+    display: block;
+  }
+  nav ul ul li {
+    border-bottom: 0px;
+  }
+  span.cancel:before {
+    content: '\f00d';
+  }
+}
+
+.content {
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+header {
+  font-size: 35px;
+  font-weight: 600;
+  padding: 10px 0;
+}
+
+p {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 600px) {
+  .ali {
+    display: none;
+  }
+}
+
+.qutu1 {
+  width: 100%;
+  height: 70vh;
+  background-color: gray;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 600px) {
+  .qutu1 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.qutu1 .qutuin {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.qutu1 .qutuin h1 {
+  font-size: 30px;
+  color: #33ffff;
+  line-height: 40px;
+}
+
+@media only screen and (max-width: 600px) {
+  .qutu1 .qutuin h1 {
+    margin-bottom: 10%;
+    font-size: 25px;
+  }
+}
+
+.qutu1 .qutuin h2 {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+  .qutu1 .qutuin h2 {
+    margin-bottom: 10%;
+    font-size: 40px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .qutu1 .qutuin p {
+    margin-bottom: 10%;
+    font-size: 25px;
+  }
+}
+
+.qutu1 .qutuin button {
+  width: 150px;
+  height: 50px;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  background-color: black;
+}
+
+@media only screen and (max-width: 600px) {
+  .qutu1 .qutuin button {
+    margin-left: 5%;
+  }
+}
+
+.qutu1 img {
+  width: 30%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .qutu1 img {
+    display: none;
+  }
+}
+
+.qutu2 {
+  width: 100%;
+  height: 75vh;
+  background-color: gray;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 600px) {
+  .qutu2 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 88vh;
+  }
+}
+
+.qutu2 img {
+  width: 30%;
+  height: 70%;
+  margin-top: 10%;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .qutu2 img {
+    margin-left: 5%;
+    width: 50%;
+  }
+}
+
+.qutu2 img:hover {
+  width: 32%;
+  height: 72%;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+
+@media only screen and (max-width: 600px) {
+  .qutu2 img:hover {
+    width: 55%;
+  }
+}
+
+.qutu2 .qutu2in {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.qutu2 .qutu2in h1 {
+  font-size: 30px;
+  color: #33ffff;
+  line-height: 40px;
+}
+
+@media only screen and (max-width: 600px) {
+  .qutu2 .qutu2in h1 {
+    margin-bottom: 0%;
+    font-size: 20px;
+  }
+}
+
+.qutu2 .qutu2in h2 {
+  font-size: 50px;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+@media only screen and (max-width: 600px) {
+  .qutu2 .qutu2in h2 {
+    margin-bottom: 10%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .qutu2 .qutu2in p {
+    margin-bottom: 10%;
+    font-size: 25px;
+  }
+}
+
+.qutu2 .qutu2in button {
+  width: 150px;
+  height: 50px;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  outline: none;
+  border: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .qutu2 .qutu2in button {
+    margin-left: 5%;
+  }
+}
+
+.qutu2 .qutu2in button:hover {
+  color: black;
+  background-color: white;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+}
+
+.qutu3 {
+  width: 100%;
+  height: 75vh;
+  background-color: gray;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 600px) {
+  .qutu3 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 88vh;
+  }
+}
+
+.qutu3 img {
+  width: 30%;
+  height: 70%;
+  margin-top: 10%;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .qutu3 img {
+    margin-left: 5%;
+    width: 70%;
+  }
+}
+
+.qutu3 img:hover {
+  width: 32%;
+  height: 72%;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+
+@media only screen and (max-width: 600px) {
+  .qutu3 img:hover {
+    width: 85%;
+  }
+}
+
+.qutu3 .qutu3in {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.qutu3 .qutu3in h1 {
+  font-size: 30px;
+  color: #33ffff;
+  line-height: 40px;
+}
+
+@media only screen and (max-width: 600px) {
+  .qutu3 .qutu3in h1 {
+    margin-bottom: 0%;
+    font-size: 20px;
+  }
+}
+
+.qutu3 .qutu3in h2 {
+  font-size: 50px;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+@media only screen and (max-width: 600px) {
+  .qutu3 .qutu3in h2 {
+    margin-bottom: 10%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .qutu3 .qutu3in p {
+    margin-bottom: 10%;
+    font-size: 25px;
+  }
+}
+
+.qutu3 .qutu3in button {
+  width: 150px;
+  height: 50px;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  outline: none;
+  border: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .qutu3 .qutu3in button {
+    margin-left: 5%;
+  }
+}
+
+.qutu3 .qutu3in button:hover {
+  color: black;
+  background-color: white;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+}
+
+.qutu4 {
+  width: 100%;
+  height: 75vh;
+  background-color: gray;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 600px) {
+  .qutu4 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100vh;
+  }
+}
+
+.qutu4 img {
+  width: 30%;
+  height: 70%;
+  margin-top: 10%;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .qutu4 img {
+    margin-left: 5%;
+    width: 70%;
+  }
+}
+
+.qutu4 img:hover {
+  width: 32%;
+  height: 72%;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+
+@media only screen and (max-width: 600px) {
+  .qutu4 img:hover {
+    width: 85%;
+  }
+}
+
+.qutu4 .qutu4in {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.qutu4 .qutu4in h1 {
+  font-size: 30px;
+  color: #33ffff;
+  line-height: 40px;
+}
+
+@media only screen and (max-width: 600px) {
+  .qutu4 .qutu4in h1 {
+    margin-bottom: 0%;
+    font-size: 20px;
+  }
+}
+
+.qutu4 .qutu4in h2 {
+  font-size: 50px;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+@media only screen and (max-width: 600px) {
+  .qutu4 .qutu4in h2 {
+    margin-bottom: 10%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .qutu4 .qutu4in p {
+    margin-bottom: 10%;
+    font-size: 25px;
+  }
+}
+
+.qutu4 .qutu4in button {
+  width: 150px;
+  height: 50px;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  outline: none;
+  border: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .qutu4 .qutu4in button {
+    margin-left: 5%;
+  }
+}
+
+.qutu4 .qutu4in button:hover {
+  color: black;
+  background-color: white;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+}
+
+.qutu5 {
+  width: 100%;
+  height: 25vh;
+  background-color: #edf2fc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+  .qutu5 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.qutu5 input {
+  display: block;
+  width: 500px;
+  height: 50px;
+  margin-left: 20%;
+  margin-top: 5%;
+  padding-left: 2%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid black;
+  outline: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .qutu5 input {
+    margin-top: 8%;
+    margin-left: 5%;
+    width: 250px;
+  }
+}
+
+.qutu5 button {
+  width: 150px;
+  height: 50px;
+  margin-top: 5%;
+  color: white;
+  outline: none;
+  border: none;
+  background-color: black;
+}
+
+@media only screen and (max-width: 600px) {
+  .qutu5 button {
+    margin-left: 55%;
+    margin-top: -18%;
+    height: 51px;
+  }
+}
+
+.qutu5 h1 {
+  font-size: 35px;
+  margin-left: 10%;
+  margin-top: 5%;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+  .qutu5 h1 {
+    margin-top: 8%;
+  }
+}
+
+.divfinal {
+  width: 100%;
+  height: 30vh;
+  background-color: #edf2fc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 600px) {
+  .divfinal {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 60vh;
+  }
+}
+
+.divfinal .qutu11 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 5%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 600px) {
+  .divfinal .qutu11 {
+    height: 60vh;
+  }
+}
+
+.divfinal .qutu11 h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+  .divfinal .qutu11 h1 {
+    font-size: 25px;
+  }
+}
+
+.divfinal .qutu11 i {
+  font-size: 25px;
+}
+
+@media only screen and (max-width: 600px) {
+  .divfinal .qutu11 i {
+    font-size: 20px;
+  }
+}
+
+.divfinal .qutu22 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 5%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 600px) {
+  .divfinal .qutu22 {
+    height: 60vh;
+  }
+}
+
+.divfinal .qutu22 h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+  .divfinal .qutu22 h1 {
+    font-size: 25px;
+  }
+}
+
+.divfinal .qutu22 a {
+  font-size: 25px;
+  text-decoration: none;
+  color: #1b1b1b;
+}
+
+@media only screen and (max-width: 600px) {
+  .divfinal .qutu22 a {
+    font-size: 20px;
+  }
+}
+
+.divfinal .qutu22 a:hover {
+  color: burlywood;
+}
+
+.divfinal .qutu33 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 5%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 600px) {
+  .divfinal .qutu33 {
+    height: 60vh;
+  }
+}
+
+.divfinal .qutu33 h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+  .divfinal .qutu33 h1 {
+    font-size: 25px;
+  }
+}
+
+.divfinal .qutu33 a {
+  font-size: 25px;
+  text-decoration: none;
+  color: #1b1b1b;
+}
+
+@media only screen and (max-width: 600px) {
+  .divfinal .qutu33 a {
+    font-size: 20px;
+  }
+}
+
+.divfinal .qutu33 a:hover {
+  color: burlywood;
+}
+
+.box1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 15vh;
+  background-color: #edf2fc;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin-top: 5%;
+}
+
+@media only screen and (max-width: 600px) {
+  .box1 {
+    height: 25vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.box1 h1 {
+  font-size: 45px;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+  .box1 h1 {
+    font-size: 35px;
+    margin-left: 28%;
+  }
+}
+
+.box1 .first {
+  width: 500px;
+  height: 5vh;
+}
+
+@media only screen and (max-width: 600px) {
+  .box1 .first {
+    width: 360px;
+  }
+}
+
+.box1 .first a {
+  font-size: 25px;
+  margin-left: 5%;
+  text-decoration: none;
+  color: black;
+}
+
+.box1 .first a:hover {
+  color: burlywood;
+}
+
+.box1 .second {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 500px;
+  height: 5vh;
+}
+
+@media only screen and (max-width: 600px) {
+  .box1 .second {
+    width: 360px;
+  }
+}
+
+.box1 .second h2 {
+  font-size: 25px;
+}
+
+@media only screen and (max-width: 600px) {
+  .box1 .second h2 {
+    font-size: 20px;
+  }
+}
+
+.box1 .second a {
+  margin-left: 10%;
+  font-size: 30px;
+  color: cadetblue;
+}
+
+.box1 .second a:hover {
+  color: cyan;
+}
+/*# sourceMappingURL=main.css.map */
